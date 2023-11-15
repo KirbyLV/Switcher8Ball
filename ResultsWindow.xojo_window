@@ -226,10 +226,168 @@ Begin DesktopWindow ResultsWindow
       Visible         =   True
       Width           =   175
    End
+   Begin DesktopGroupBox Group_Panasonic3G
+      AllowAutoDeactivate=   False
+      Bold            =   False
+      Caption         =   "Panasonic 3G"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   202
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   19
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   6
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   20
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   321
+   End
+   Begin DesktopGroupBox Group_Panasonic12G
+      AllowAutoDeactivate=   False
+      Bold            =   False
+      Caption         =   "Panasonic 12G"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   202
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   19
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   7
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   52
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   321
+   End
+   Begin DesktopGroupBox Group_Carbonite
+      AllowAutoDeactivate=   False
+      Bold            =   False
+      Caption         =   "Carbonite"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   202
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   19
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   8
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   80
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   321
+   End
+   Begin DesktopGroupBox Group_Ultrix
+      AllowAutoDeactivate=   False
+      Bold            =   False
+      Caption         =   "Ultrix"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   202
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   19
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   113
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   321
+   End
+   Begin DesktopGroupBox Group_Acuity
+      AllowAutoDeactivate=   False
+      Bold            =   False
+      Caption         =   "Acuity"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   202
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   18
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   10
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   140
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   321
+   End
 End
 #tag EndDesktopWindow
 
 #tag WindowCode
+	#tag Event
+		Sub Activated()
+		  //Set conditionals to enable visibility of results groups
+		  if MainWindow.Winner = "Panasonic3G" Then
+		    Group_Panasonic3G.Visible = True
+		  ElseIf MainWindow.Winner = "Panasonic12G" Then
+		    Group_Panasonic12G.Visible = True
+		  ElseIf MainWindow.Winner = "Carbonite" Then
+		    Group_Carbonite.Visible = True
+		  ElseIf MainWindow.Winner = "Ultrix" Then
+		    Group_Ultrix.Visible = True
+		  ElseIf MainWindow.Winner = "Acuity" Then
+		    Group_Acuity.Visible = True
+		  End
+		End Sub
+	#tag EndEvent
+
+
 #tag EndWindowCode
 
 #tag Events Button_again
@@ -243,6 +401,13 @@ End
 		  
 		  MainWindow.GroupBox_7.Visible = False
 		  MainWindow.GroupBox_1.Visible = True
+		  
+		  //Default all results groups to non visible
+		  Group_Panasonic3G.Visible = False
+		  Group_Panasonic12G.Visible = False
+		  Group_Carbonite.Visible = False
+		  Group_Ultrix.Visible = False
+		  Group_Acuity.Visible = False
 		  
 		  //close window
 		  self.Close

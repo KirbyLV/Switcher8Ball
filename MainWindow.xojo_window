@@ -1231,6 +1231,12 @@ End
 
 #tag WindowCode
 	#tag Event
+		Sub Activated()
+		  ResultsWindow.Close
+		End Sub
+	#tag EndEvent
+
+	#tag Event
 		Sub Opening()
 		  //Set starting boolean variables values
 		  panasonic = True
@@ -1266,6 +1272,10 @@ End
 
 	#tag Property, Flags = &h0
 		ultrix As Boolean = true
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		Winner As string
 	#tag EndProperty
 
 
@@ -1483,6 +1493,21 @@ End
 		    ResultsWindow.ListBox1.AddRow("Acuity","False")
 		  End
 		  
+		  
+		  if panasonic = True AND carbonite = True Then
+		    Winner = "Panasonic3G"
+		  ElseIf panasonic = True AND carbonite = False Then
+		    Winner = "Panasonic12G"
+		  ElseIf panasonic = False AND Carbonite = True Then
+		    Winner = "Carbonite"
+		  ElseIf panasonic = False AND carbonite = False AND ultrix = True Then
+		    Winner = "Ultrix"
+		  ElseIf panasonic = False AND carbonite = False AND ultrix = False Then
+		    Winner = "Acuity"
+		  End
+		  
+		  
+		  ResultsWindow.ShowModal
 		End Sub
 	#tag EndEvent
 #tag EndEvents
