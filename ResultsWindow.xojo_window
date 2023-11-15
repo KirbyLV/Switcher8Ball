@@ -47,11 +47,11 @@ Begin DesktopWindow ResultsWindow
       HasHorizontalScrollbar=   False
       HasVerticalScrollbar=   True
       HeadingIndex    =   -1
-      Height          =   130
+      Height          =   108
       Index           =   -2147483648
       InitialValue    =   ""
       Italic          =   False
-      Left            =   150
+      Left            =   352
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -68,7 +68,7 @@ Begin DesktopWindow ResultsWindow
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   300
+      Width           =   228
       _ScrollWidth    =   -1
    End
    Begin DesktopButton Button_again
