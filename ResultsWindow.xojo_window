@@ -241,6 +241,9 @@ End
 		  MainWindow.ultrix = True
 		  MainWindow.acuity = True
 		  
+		  MainWindow.GroupBox_7.Visible = False
+		  MainWindow.GroupBox_1.Visible = True
+		  
 		  //close window
 		  self.Close
 		End Sub
