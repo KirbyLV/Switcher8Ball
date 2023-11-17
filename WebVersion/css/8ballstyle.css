@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.btn-group{
+	height: 100%;
+	width: 100%
+}
+.btn-autowide{
+	height: 100%;
+	width: auto
+}
+.XojoButton{
+	text-align: center
+}
